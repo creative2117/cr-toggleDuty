@@ -35,6 +35,7 @@ function init()
     if isSetup then return end
     isSetup = true
     if not Config.useTarget then
+        if Config.debug then print("^4Useing 3D texts") end
         CreateThread(function()
             while true do
                 local inRange = false
@@ -57,12 +58,14 @@ function init()
                                     if IsControlJustReleased(0, Config.key) then
                                         sleep = 1000
                                         TriggerServerEvent("QBCore:ToggleDuty")
+                                        if Config.debug then print("^1Went ON duty") end
                                     end
                                 else
                                     DrawText3D(coords.x, coords.y, coords.z, Config.textOnDuty)
                                     if IsControlJustReleased(0, Config.key) then
                                         sleep = 1000
                                         TriggerServerEvent("QBCore:ToggleDuty")
+                                        if Config.debug then print("^2Went OFF duty") end
                                     end
                                 end
                             end
@@ -77,6 +80,7 @@ function init()
             end
         end)
     else
+        if Config.debug then print("^4Useing Target") end
         for k, _ in pairs(Config.jobLocations) do
 
             exports['qb-target']:AddCircleZone('cr-toggleDuty' .. k, vector3(Config.jobLocations[k].coords.x, Config.jobLocations[k].coords.y, Config.jobLocations[k].coords.z), 0.5,{
@@ -90,8 +94,10 @@ end
 
 function toggleDuty(k)
     if job.name == Config.jobLocations[k].name then
+        if Config.debug then print("^2toggled duty through target") end
         TriggerServerEvent("QBCore:ToggleDuty")
     else
+        if Config.debug then print("^1toggled duty through target") end
         QBCore.Functions.Notify(Config.targetDontHaveJob, "error", 1000)
     end
 end
