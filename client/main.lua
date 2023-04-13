@@ -52,10 +52,7 @@ function init()
                             inRange = true
                             
                             if dist < 5 then
-                                
-                                -- print(Config.jobLocations[k].name)
                                 if not job.onduty then
-                                    -- print(job.onduty)
                                     DrawText3D(coords.x, coords.y, coords.z, Config.textOffDuty)
                                     if IsControlJustReleased(0, Config.key) then
                                         sleep = 1000
