@@ -1,5 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+
 local job = QBCore.Functions.GetPlayerData().job
+local isSetup = false
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     job = QBCore.Functions.GetPlayerData().job
@@ -30,6 +32,8 @@ local function DrawText3D(x, y, z, text)
 end
 
 function init()
+    if isSetup then return end
+    isSetup = true
     if not Config.useTarget then
         CreateThread(function()
             while true do
