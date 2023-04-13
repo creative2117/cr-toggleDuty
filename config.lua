@@ -1,5 +1,5 @@
 Config = {
-    debug = true,
+    debug = false,
     useTarget = true, -- GetConvar('UseTarget', 'false') == 'true',
 
     key = 47, -- (G) https://docs.fivem.net/docs/game-references/controls/
