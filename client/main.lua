@@ -58,6 +58,7 @@ function init()
                                     if IsControlJustReleased(0, Config.key) then
                                         sleep = 1000
                                         TriggerServerEvent("QBCore:ToggleDuty")
+                                        TriggerServerEvent("cr-toggleduty:server:log", "on", QBCore.Functions.GetPlayerData().citizenid, QBCore.Functions.GetPlayerData().job.name)
                                         if Config.debug then print("^1Went ON duty") end
                                     end
                                 else
@@ -65,6 +66,7 @@ function init()
                                     if IsControlJustReleased(0, Config.key) then
                                         sleep = 1000
                                         TriggerServerEvent("QBCore:ToggleDuty")
+                                        TriggerServerEvent("cr-toggleduty:server:log", "off", QBCore.Functions.GetPlayerData().citizenid, QBCore.Functions.GetPlayerData().job.name)
                                         if Config.debug then print("^2Went OFF duty") end
                                     end
                                 end
