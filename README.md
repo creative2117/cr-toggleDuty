@@ -1,5 +1,5 @@
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/X8X0KDPJQ)
-# cr-picking
+# cr-toggleDuty
 
 An easy to use toggle duty script with configurable locations for each job.
 
