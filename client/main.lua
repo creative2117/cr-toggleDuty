@@ -88,7 +88,15 @@ function init()
             exports['qb-target']:AddCircleZone('cr-toggleDuty' .. k, vector3(Config.jobLocations[k].coords.x, Config.jobLocations[k].coords.y, Config.jobLocations[k].coords.z), 0.5,{
                 name = 'cr-toggleduty_' .. k,
                 debugPoly = Config.debug, useZ=true}, {
-                options = {{label = Config.targetText,icon = Config.jobLocations[k].icon, action = function() toggleDuty(k) end}},
+                options = {
+                    {
+                        label = Config.targetText,
+                        icon = Config.jobLocations[k].icon,
+                        action = function()
+                            toggleDuty(k)
+                        end,
+                    },
+                },
                 distance = 2.0
             })
             if v.model then
