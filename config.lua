@@ -13,7 +13,7 @@ Config = {
     --coords = coords for the location
     --icon = the icon in qb-target
     jobLocations = {
-        ["police"] = { name = "police", coords = vector3(901.46, -1060.14, 32.83), icon = "fa fa-clipboard" },
-        ["ambulance"] = { name = "ambulance", coords = vector3(896.97, -1057.59, 32.83), icon = "fa fa-clipboard" },
+        ["police"] = { name = "police", model = {'police', 'police2'} coords = vector3(901.46, -1060.14, 32.83), icon = "fa fa-clipboard" },
+        ["ambulance"] = { name = "ambulance", model = 'ambulance', coords = vector3(896.97, -1057.59, 32.83), icon = "fa fa-clipboard" },
     },
 }
